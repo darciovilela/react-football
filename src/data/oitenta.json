@@ -1,0 +1,47 @@
+[
+  {
+    "year": "1980",
+    "champion": "Flamengo",
+    "vice": "Atlético Mineiro"
+   },
+  {
+    "year": "1981",
+    "champion": "Grêmio",
+    "vice": "São Paulo"
+  },
+  {
+    "year": "1982",
+    "champion": "Flamengo",
+    "vice": "Grêmio"
+  },
+  {
+    "year": "1984",
+    "champion": "Fluminense",
+    "vice": "Vasco da Gama"
+  },
+  {
+    "year": "1985",
+    "champion": "Coritiba",
+    "vice": "Bangu"
+  },
+  {
+    "year": "1986",
+    "champion": "São Paulo",
+    "vice": "Guarani"
+  },
+  {
+    "year": "1987",
+    "champion": "Flamengo",
+    "vice": "Internacional"
+  },
+  {
+    "year": "1988",
+    "champion": "Bahia",
+    "vice": "Internacional"
+  },
+  {
+    "year": "1989",
+    "champion": "Vasco da Gama",
+    "vice": "São Paulo"
+  }
+]
