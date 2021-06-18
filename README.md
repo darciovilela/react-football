@@ -1,6 +1,6 @@
 ## A Simple React website with TypeScript
 
-Website present football brazilian champions by years.
+The website displays the Brazilian football champions teams.
 
 ## Technology
 
@@ -9,8 +9,8 @@ Website present football brazilian champions by years.
 
 ## Running locally
 
-- git clone https://github.com/darciovilela/campeoes-brasileirao.git
-- cd campeoes-brasileirao
+- git clone https://github.com/darciovilela/react-football.git
+- cd react-football
 
 ## Install dependencies
 
