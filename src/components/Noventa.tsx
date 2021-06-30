@@ -1,4 +1,5 @@
-import noventa from '../data/noventa.json';
+import db from '../data/db.json';
+const noventa = db.noventa;
 
 export const Noventa = () => {
   return (

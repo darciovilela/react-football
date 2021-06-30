@@ -1,4 +1,5 @@
-import oitenta from '../data/oitenta.json';
+import db from '../data/db.json';
+const oitenta = db.oitenta;
 
 export const Oitenta = () => {
   return (

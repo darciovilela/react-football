@@ -1,0 +1,108 @@
+{
+  "oitenta": [
+  {
+    "year": "1980",
+    "champion": "Flamengo",
+    "vice": "Atlético Mineiro"
+   },
+  {
+    "year": "1981",
+    "champion": "Grêmio",
+    "vice": "São Paulo"
+  },
+  {
+    "year": "1982",
+    "champion": "Flamengo",
+    "vice": "Grêmio"
+  },
+  {
+    "year": "1983",
+    "champion": "Flamengo",
+    "vice": "Santos"
+  },
+  {
+    "year": "1984",
+    "champion": "Fluminense",
+    "vice": "Vasco da Gama"
+  },
+  {
+    "year": "1985",
+    "champion": "Coritiba",
+    "vice": "Bangu"
+  },
+  {
+    "year": "1986",
+    "champion": "São Paulo",
+    "vice": "Guarani"
+  },
+  {
+    "year": "1987",
+    "champion": "Flamengo",
+    "vice": "Internacional"
+  },
+  {
+    "year": "1988",
+    "champion": "Bahia",
+    "vice": "Internacional"
+  },
+  {
+    "year": "1989",
+    "champion": "Vasco da Gama",
+    "vice": "São Paulo"
+  }
+
+  ],
+  "noventa": [
+    {
+      "year": "1990",
+      "champion": "Corinthians",
+      "vice": "São Paulo"
+     },
+    {
+      "year": "1991",
+      "champion": "São Paulo",
+      "vice": "Bragantino"
+    },
+    {
+      "year": "1992",
+      "champion": "Flamengo",
+      "vice": "Botafogo"
+    },
+    {
+      "year": "1993",
+      "champion": "Palmeiras",
+      "vice": "Vitória"
+    },
+    {
+      "year": "1994",
+      "champion": "Palmeiras",
+      "vice": "Corinthians"
+    },
+    {
+      "year": "1995",
+      "champion": "Botafogo",
+      "vice": "Santos"
+    },
+    {
+      "year": "1996",
+      "champion": "Grêmio",
+      "vice": "Portuguesa"
+    },
+    {
+      "year": "1997",
+      "champion": "Vasco",
+      "vice": "Palmeiras"
+    },
+    {
+      "year": "1998",
+      "champion": "Corinthians",
+      "vice": "Cruzeiro"
+    },
+    {
+      "year": "1999",
+      "champion": "Corinthians",
+      "vice": "Vasco"
+    }
+  ]
+
+}
