@@ -67,6 +67,20 @@ td {
   text-align: center;
 }
 
+.noventa-table-head {
+  background-color: #0c6880;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.noventa-table-body {
+  background-color: #7b7c7e;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
 .App-footer {
   background-color: #2d6115;
   font-size: 12px;
