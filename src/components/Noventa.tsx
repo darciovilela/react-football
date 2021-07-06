@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { NoventaForm } from './NoventaForm';
 
 export interface Noventa {
   id?: string;
@@ -29,6 +30,7 @@ export const Noventa = () => {
   return (
     <div>
       <h1>1990 Champions</h1>
+      <NoventaForm setDate={setDate} />
       <table className="center">
         <thead className="noventa-table-head">
           <tr>

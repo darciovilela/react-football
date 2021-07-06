@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { OitentaForm } from './OitentaForm';
 
 //declaracao do que sera passado na interface
 export interface Oitenta {
@@ -32,6 +33,7 @@ export const Oitenta = () => {
   return (
     <div>
       <h1>1980 Champions</h1>
+      <OitentaForm setDate={setDate} />
       <table className="center">
         <thead className="oitenta-table-head">
           <tr>
