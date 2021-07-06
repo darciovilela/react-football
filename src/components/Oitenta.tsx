@@ -1,24 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { OitentaForm } from './OitentaForm';
-
-//declaracao do que sera passado na interface
-export interface Oitenta {
-  id?: string;
-  year: string;
-  champion: string;
-  vice: string;
-}
+import { Championship } from '../interfaces/championships';
 
 // inicio do estado com array vazio
 export const Oitenta = () => {
-  const [oitenta, setOitenta] = useState<Oitenta[]>([]);
+  const [oitenta, setOitenta] = useState<Championship[]>([]);
   const [date, setDate] = useState(+new Date());
 
   // componentDidMount or variable date was changed
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Oitenta[]>(
+      const result = await axios.get<Championship[]>(
         'http://localhost:4000/oitenta'
       );
       setOitenta(result.data);

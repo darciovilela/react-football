@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Noventa } from './Noventa';
+import { Championship } from '../interfaces/championships';
 
 // estado inicial do form vazio
-const emptyNoventa: Noventa = {
+const emptyNoventa: Championship = {
   year: '',
   champion: '',
   vice: '',
@@ -16,8 +16,8 @@ interface IProps {
 export const NoventaForm: React.FC<IProps> = ({ setDate }) => {
   const [formState, setFormState] = useState(emptyNoventa);
 
-  const createNoventa = async (noventa: Noventa) => {
-    const result = await axios.post<Noventa>(
+  const createNoventa = async (noventa: Championship) => {
+    const result = await axios.post<Championship>(
       'http://localhost:4000/noventa',
       noventa
     );

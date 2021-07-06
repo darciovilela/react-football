@@ -1,21 +1,15 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NoventaForm } from './NoventaForm';
-
-export interface Noventa {
-  id?: string;
-  year: string;
-  champion: string;
-  vice: string;
-}
+import { Championship } from '../interfaces/championships';
 
 export const Noventa = () => {
-  const [noventa, setNoventa] = useState<Noventa[]>([]);
+  const [noventa, setNoventa] = useState<Championship[]>([]);
   const [date, setDate] = useState(+new Date());
 
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Noventa[]>(
+      const result = await axios.get<Championship[]>(
         'http://localhost:4000/noventa'
       );
       setNoventa(result.data);
