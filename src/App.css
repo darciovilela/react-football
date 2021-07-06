@@ -119,3 +119,24 @@ td {
   flex-direction: column;
   min-height: 100vh;
 }
+
+input.center {
+  font-size: 16px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 5px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.submit {
+  margin: 10px;
+  background-color: rgb(17, 138, 13);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
