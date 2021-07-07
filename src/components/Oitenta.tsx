@@ -28,14 +28,14 @@ export const Oitenta = () => {
       <h1>1980 Champions</h1>
       <OitentaForm setDate={setDate} />
       <table className="center">
-        <thead className="oitenta-table-head">
+        <thead className="table-head">
           <tr>
             <th>Year</th>
             <th>Champion</th>
             <th>Vice</th>
           </tr>
         </thead>
-        <tbody className="oitenta-table-body">
+        <tbody className="table-body">
           {oitenta.map((item) => {
             return (
               <tr>

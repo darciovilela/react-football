@@ -1,30 +1,30 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { NoventaForm } from './NoventaForm';
+import { DoismilForm } from './DoismilForm';
 import { Championship } from '../interfaces/championships';
 
-export const Noventa = () => {
-  const [noventa, setNoventa] = useState<Championship[]>([]);
+export const Doismil = () => {
+  const [doismil, setDoismil] = useState<Championship[]>([]);
   const [date, setDate] = useState(+new Date());
 
   useEffect(() => {
     const callFetchFunction = async () => {
       const result = await axios.get<Championship[]>(
-        'http://localhost:4000/noventa'
+        'http://localhost:4000/doismil'
       );
-      setNoventa(result.data);
+      setDoismil(result.data);
     };
     callFetchFunction();
   }, [date]);
 
-  if (!noventa.length) {
+  if (!doismil.length) {
     return <div>Loading... (or empty)</div>;
   }
 
   return (
     <div>
-      <h1>1990 Champions</h1>
-      <NoventaForm setDate={setDate} />
+      <h1>2000 Champions</h1>
+      <DoismilForm setDate={setDate} />
       <table className="center">
         <thead className="table-head">
           <tr>
@@ -34,7 +34,7 @@ export const Noventa = () => {
           </tr>
         </thead>
         <tbody className="table-body">
-          {noventa.map((item) => {
+          {doismil.map((item) => {
             return (
               <tr>
                 <td>{item.year}</td>

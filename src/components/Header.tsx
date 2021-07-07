@@ -18,6 +18,7 @@ export const Header = (props: IProps) => {
         <ul>
           <li onClick={() => props.setpage('Oitenta')}>Anos Oitenta</li>
           <li onClick={() => props.setpage('Noventa')}>Anos Noventa</li>
+          <li onClick={() => props.setpage('Doismil')}>Anos Dois mil</li>
         </ul>
       </div>
     </header>

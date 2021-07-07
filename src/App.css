@@ -75,28 +75,14 @@ td {
   font-size: 18px;
 }
 
-.oitenta-table-head {
+.table-head {
   background-color: #0c6880;
   font-size: 18px;
   color: white;
   text-align: center;
 }
 
-.oitenta-table-body {
-  background-color: #7b7c7e;
-  font-size: 18px;
-  color: white;
-  text-align: center;
-}
-
-.noventa-table-head {
-  background-color: #0c6880;
-  font-size: 18px;
-  color: white;
-  text-align: center;
-}
-
-.noventa-table-body {
+.table-body {
   background-color: #7b7c7e;
   font-size: 18px;
   color: white;

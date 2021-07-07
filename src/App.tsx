@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Oitenta } from './components/Oitenta';
 import { Noventa } from './components/Noventa';
+import { Doismil } from './components/Doismil';
 
 function App() {
   const [page, setPage] = useState('Oitenta');
@@ -14,6 +15,8 @@ function App() {
         return <Oitenta />;
       case 'Noventa':
         return <Noventa />;
+      case 'Doismil':
+        return <Doismil />;
     }
   };
 

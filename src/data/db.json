@@ -60,7 +60,6 @@
       "vice": "São Paulo",
       "id": 10
     }
-
   ],
   "noventa": [
     {
@@ -123,5 +122,68 @@
       "vice": "Vasco",
       "id": 10
     }
+  ],
+  "doismil": [
+    {
+      "year": "2000",
+      "champion": "Vasco da Gama",
+      "vice": "São Caetano",
+      "id": 1
+    },
+    {
+      "year": "2001",
+      "champion": "Atletico Paranaense",
+      "vice": "São Caetano",
+      "id": 2
+    },
+    {
+      "year": "2002",
+      "champion": "Santos",
+      "vice": "Corinthians",
+      "id": 3
+    },
+    {
+      "year": "2003",
+      "champion": "Cruzeiro",
+      "vice": "Santos",
+      "id": 4
+    },
+    {
+      "year": "2004",
+      "champion": "Santos",
+      "vice": "Atletico Paranaense",
+      "id": 5
+    },
+    {
+      "year": "2005",
+      "champion": "Corinthians",
+      "vice": "Internacional",
+      "id": 6
+    },
+    {
+      "year": "2006",
+      "champion": "São Paulo",
+      "vice": "Internacional",
+      "id": 7
+    },
+    {
+      "year": "2007",
+      "champion": "São Paulo",
+      "vice": "Santos",
+      "id": 8
+    },
+    {
+      "year": "2008",
+      "champion": "São Paulo",
+      "vice": "Grêmio",
+      "id": 9
+    },
+    {
+      "year": "2009",
+      "champion": "Flamengo",
+      "vice": "Internacional",
+      "id": 10
+    }
+
   ]
 }
