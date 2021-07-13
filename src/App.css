@@ -87,6 +87,23 @@ td {
   font-size: 18px;
   color: white;
   text-align: center;
+  cursor: pointer;
+}
+
+.table-body tr:hover {
+  background-color: #a0a2a7;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.table-body tr.active {
+  background-color: #7b7c7e;
+  font-size: 18px;
+  color: yellow;
+  text-align: center;
+  cursor: pointer;
 }
 
 .App-footer {

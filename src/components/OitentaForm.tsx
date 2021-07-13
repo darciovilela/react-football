@@ -1,24 +1,27 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Championship } from '../interfaces/championships';
-
-// estado inicial do form vazio
-const emptyOitenta: Championship = {
-  year: '',
-  champion: '',
-  vice: '',
-};
+import { emptyOitenta } from './Oitenta';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Championship;
 }
 
-export const OitentaForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyOitenta);
+export const OitentaForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createOitenta = async (oitenta: Championship) => {
-    const result = await axios.post<Championship>(
-      'http://localhost:4000/oitenta',
+    await axios.post<Championship>('http://localhost:4000/oitenta', oitenta);
+  };
+
+  const updateOitenta = async (oitenta: Championship) => {
+    await axios.patch<Championship>(
+      `http://localhost:4000/oitenta/${oitenta.id}`,
       oitenta
     );
   };
@@ -30,9 +33,13 @@ export const OitentaForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createOitenta(formState);
+    if (formState.id) {
+      await updateOitenta(formState);
+    } else {
+      await createOitenta(formState);
+    }
     setDate(+new Date());
     setFormState(emptyOitenta);
   };
