@@ -1,24 +1,27 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Championship } from '../interfaces/championships';
-
-// estado inicial do form vazio
-const emptyDoismil: Championship = {
-  year: '',
-  champion: '',
-  vice: '',
-};
+import { emptyDoismil } from './Doismil';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Championship;
 }
 
-export const DoismilForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyDoismil);
+export const DoismilForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createDoismil = async (doismil: Championship) => {
-    const result = await axios.post<Championship>(
-      'http://localhost:4000/doismil',
+    await axios.post<Championship>('http://localhost:4000/doismil', doismil);
+  };
+
+  const updateDoismil = async (doismil: Championship) => {
+    await axios.patch<Championship>(
+      `http://localhost:4000/doismil/${doismil.id}`,
       doismil
     );
   };
@@ -30,9 +33,13 @@ export const DoismilForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createDoismil(formState);
+    if (formState.id) {
+      await updateDoismil(formState);
+    } else {
+      await createDoismil(formState);
+    }
     setDate(+new Date());
     setFormState(emptyDoismil);
   };

@@ -1,24 +1,27 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Championship } from '../interfaces/championships';
-
-// estado inicial do form vazio
-const emptyNoventa: Championship = {
-  year: '',
-  champion: '',
-  vice: '',
-};
+import { emptyNoventa } from './Noventa';
 
 interface IProps {
   setDate: Function;
+  activeRecord: Championship;
 }
 
-export const NoventaForm: React.FC<IProps> = ({ setDate }) => {
-  const [formState, setFormState] = useState(emptyNoventa);
+export const NoventaForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
+  const [formState, setFormState] = useState(activeRecord);
+
+  useEffect(() => {
+    setFormState(activeRecord);
+  }, [activeRecord]);
 
   const createNoventa = async (noventa: Championship) => {
-    const result = await axios.post<Championship>(
-      'http://localhost:4000/noventa',
+    await axios.post<Championship>('http://localhost:4000/noventa', noventa);
+  };
+
+  const updateNoventa = async (noventa: Championship) => {
+    await axios.patch<Championship>(
+      `http://localhost:4000/noventa/${noventa.id}`,
       noventa
     );
   };
@@ -30,9 +33,13 @@ export const NoventaForm: React.FC<IProps> = ({ setDate }) => {
     });
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createNoventa(formState);
+    if (formState.id) {
+      await updateNoventa(formState);
+    } else {
+      await createNoventa(formState);
+    }
     setDate(+new Date());
     setFormState(emptyNoventa);
   };

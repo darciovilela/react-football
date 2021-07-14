@@ -3,9 +3,17 @@ import axios from 'axios';
 import { NoventaForm } from './NoventaForm';
 import { Championship } from '../interfaces/championships';
 
+// estado inicial do form vazio
+export const emptyNoventa: Championship = {
+  year: '',
+  champion: '',
+  vice: '',
+};
+
 export const Noventa = () => {
   const [noventa, setNoventa] = useState<Championship[]>([]);
   const [date, setDate] = useState(+new Date());
+  const [activeRecord, setActiveRecord] = useState<Championship>(emptyNoventa);
 
   useEffect(() => {
     const callFetchFunction = async () => {
@@ -17,6 +25,13 @@ export const Noventa = () => {
     callFetchFunction();
   }, [date]);
 
+  const deleteNoventa = async (championship: Championship) => {
+    await axios.delete<Championship>(
+      `http://localhost:4000/noventa/${championship.id}`
+    );
+    setDate(+new Date());
+  };
+
   if (!noventa.length) {
     return <div>Loading... (or empty)</div>;
   }
@@ -24,10 +39,13 @@ export const Noventa = () => {
   return (
     <div>
       <h1>1990 Champions</h1>
-      <NoventaForm setDate={setDate} />
+      <button onClick={() => setActiveRecord(emptyNoventa)}>Insert New</button>
+      <NoventaForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="table-head">
           <tr>
+            <th>E</th>
+            <th>X</th>
             <th>Year</th>
             <th>Champion</th>
             <th>Vice</th>
@@ -36,7 +54,22 @@ export const Noventa = () => {
         <tbody className="table-body">
           {noventa.map((item) => {
             return (
-              <tr>
+              <tr
+                key={item.id}
+                className={activeRecord === item ? 'active' : ''}
+              >
+                <td>
+                  <button
+                    onClick={() => {
+                      setActiveRecord(item);
+                    }}
+                  >
+                    E
+                  </button>
+                </td>
+                <td>
+                  <button onClick={() => deleteNoventa(item)}>X</button>
+                </td>
                 <td>{item.year}</td>
                 <td>{item.champion}</td>
                 <td>{item.vice}</td>
