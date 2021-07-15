@@ -1,189 +1,235 @@
 {
-  "oitenta": [
+  "final": [
     {
       "year": "1980",
       "champion": "Flamengo",
       "vice": "Atlético Mineiro",
+      "oitenta": true,
       "id": 1
     },
     {
       "year": "1981",
       "champion": "Grêmio",
       "vice": "São Paulo",
+      "oitenta": true,
       "id": 2
     },
     {
       "year": "1982",
       "champion": "Flamengo",
       "vice": "Grêmio",
+      "oitenta": true,
       "id": 3
     },
     {
       "year": "1983",
       "champion": "Flamengo",
       "vice": "Santos",
+      "oitenta": true,
       "id": 4
     },
     {
       "year": "1984",
       "champion": "Fluminense",
       "vice": "Vasco da Gama",
+      "oitenta": true,
       "id": 5
     },
     {
       "year": "1985",
       "champion": "Coritiba",
       "vice": "Bangu",
+      "oitenta": true,
       "id": 6
     },
     {
       "year": "1986",
       "champion": "São Paulo",
       "vice": "Guarani",
+      "oitenta": true,
       "id": 7
     },
     {
       "year": "1987",
       "champion": "Flamengo",
       "vice": "Internacional",
+      "oitenta": true,
       "id": 8
     },
     {
       "year": "1988",
       "champion": "Bahia",
       "vice": "Internacional",
+      "oitenta": true,
       "id": 9
     },
     {
       "year": "1989",
       "champion": "Vasco da Gama",
       "vice": "São Paulo",
+      "oitenta": true,
       "id": 10
-    }
-  ],
-  "noventa": [
+    },
     {
       "year": "1990",
       "champion": "Corinthians",
       "vice": "São Paulo",
-      "id": 1
+      "noventa": true,
+      "id": 11
     },
     {
       "year": "1991",
       "champion": "São Paulo",
       "vice": "Bragantino",
-      "id": 2
+      "noventa": true,
+      "id": 13
     },
     {
       "year": "1992",
       "champion": "Flamengo",
       "vice": "Botafogo",
-      "id": 3
+      "noventa": true,
+      "id": 14
     },
     {
       "year": "1993",
       "champion": "Palmeiras",
       "vice": "Vitória",
-      "id": 4
+      "noventa": true,
+      "id": 15
     },
     {
       "year": "1994",
       "champion": "Palmeiras",
       "vice": "Corinthians",
-      "id": 5
+      "noventa": true,
+      "id": 16
     },
     {
       "year": "1995",
       "champion": "Botafogo",
       "vice": "Santos",
-      "id": 6
+      "noventa": true,
+      "id": 17
     },
     {
       "year": "1996",
       "champion": "Grêmio",
       "vice": "Portuguesa",
-      "id": 7
+      "noventa": true,
+      "id": 18
     },
     {
       "year": "1997",
       "champion": "Vasco",
       "vice": "Palmeiras",
-      "id": 8
+      "noventa": true,
+      "id": 19
     },
     {
       "year": "1998",
       "champion": "Corinthians",
       "vice": "Cruzeiro",
-      "id": 9
+      "noventa": true,
+      "id": 20
     },
     {
       "year": "1999",
       "champion": "Corinthians",
-      "vice": "Vasco",
-      "id": 10
-    }
-  ],
-  "doismil": [
+      "vice": "Atlético Mineiro",
+      "noventa": true,
+      "id": 21
+    },
     {
       "year": "2000",
       "champion": "Vasco da Gama",
       "vice": "São Caetano",
-      "id": 1
+      "doismil": true,
+      "id": 22
     },
     {
       "year": "2001",
       "champion": "Atletico Paranaense",
       "vice": "São Caetano",
-      "id": 2
+      "doismil": true,
+      "id": 23
     },
     {
       "year": "2002",
       "champion": "Santos",
       "vice": "Corinthians",
-      "id": 3
+      "doismil": true,
+      "id": 24
     },
     {
       "year": "2003",
       "champion": "Cruzeiro",
       "vice": "Santos",
-      "id": 4
+      "doismil": true,
+      "id": 25
     },
     {
       "year": "2004",
       "champion": "Santos",
       "vice": "Atletico Paranaense",
-      "id": 5
+      "doismil": true,
+      "id": 26
     },
     {
       "year": "2005",
       "champion": "Corinthians",
       "vice": "Internacional",
-      "id": 6
+      "doismil": true,
+      "id": 27
     },
     {
       "year": "2006",
       "champion": "São Paulo",
       "vice": "Internacional",
-      "id": 7
+      "doismil": true,
+      "id": 28
     },
     {
       "year": "2007",
       "champion": "São Paulo",
       "vice": "Santos",
-      "id": 8
+      "doismil": true,
+      "id": 29
     },
     {
       "year": "2008",
       "champion": "São Paulo",
       "vice": "Grêmio",
-      "id": 9
+      "doismil": true,
+      "id": 30
     },
     {
       "year": "2009",
       "champion": "Flamengo",
       "vice": "Internacional",
-      "id": 10
+      "doismil": true,
+      "id": 31
+    },
+    {
+      "year": "2010",
+      "champion": "Fluminense",
+      "vice": "Cruzeiro",
+      "doismil": true,
+      "id": 32
+    },
+    {
+      "year": "dsadasd",
+      "champion": "dasdasd",
+      "vice": "adasda",
+      "oitenta": true,
+      "id": 33
+    },
+    {
+      "year": "fdsfsdfdsf",
+      "champion": "sfsdfdsf",
+      "vice": "sfsdfdsfds",
+      "noventa": true,
+      "id": 34
     }
-
   ]
 }
