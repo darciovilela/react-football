@@ -4,4 +4,7 @@ export interface Championship {
   year: string;
   champion: string;
   vice: string;
+  oitenta?: boolean;
+  noventa?: boolean;
+  doismil?: boolean;
 }

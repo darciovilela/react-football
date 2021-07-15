@@ -16,12 +16,15 @@ export const DoismilForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   }, [activeRecord]);
 
   const createDoismil = async (doismil: Championship) => {
-    await axios.post<Championship>('http://localhost:4000/doismil', doismil);
+    await axios.post<Championship>('http://localhost:4000/final', {
+      ...doismil,
+      doismil: true,
+    });
   };
 
   const updateDoismil = async (doismil: Championship) => {
     await axios.patch<Championship>(
-      `http://localhost:4000/doismil/${doismil.id}`,
+      `http://localhost:4000/final/${doismil.id}`,
       doismil
     );
   };

@@ -16,12 +16,15 @@ export const OitentaForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
   }, [activeRecord]);
 
   const createOitenta = async (oitenta: Championship) => {
-    await axios.post<Championship>('http://localhost:4000/oitenta', oitenta);
+    await axios.post<Championship>('http://localhost:4000/final', {
+      ...oitenta,
+      oitenta: true,
+    });
   };
 
   const updateOitenta = async (oitenta: Championship) => {
     await axios.patch<Championship>(
-      `http://localhost:4000/oitenta/${oitenta.id}`,
+      `http://localhost:4000/final/${oitenta.id}`,
       oitenta
     );
   };

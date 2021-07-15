@@ -18,16 +18,16 @@ export const Doismil = () => {
   useEffect(() => {
     const callFetchFunction = async () => {
       const result = await axios.get<Championship[]>(
-        'http://localhost:4000/doismil'
+        'http://localhost:4000/final?doismil=true'
       );
       setDoismil(result.data);
     };
     callFetchFunction();
   }, [date]);
 
-  const deleteDoismil = async (championship: Championship) => {
+  const deleteDoismil = async (doismil: Championship) => {
     await axios.delete<Championship>(
-      `http://localhost:4000/doismil/${championship.id}`
+      `http://localhost:4000/final/${doismil.id}`
     );
     setDate(+new Date());
   };
