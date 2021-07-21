@@ -13,7 +13,7 @@ export const useList = (emptyChampionship: Championship, urlParams: string) => {
   useEffect(() => {
     const callFetchFunction = async () => {
       const result = await axios.get<Championship[]>(
-        'http://localhost:4000/final?${urlParams}'
+        `http://localhost:4000/final?${urlParams}`
       );
       setChampionship(result.data);
     };
