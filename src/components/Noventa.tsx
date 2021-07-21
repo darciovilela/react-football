@@ -1,45 +1,34 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { NoventaForm } from './NoventaForm';
 import { Championship } from '../interfaces/championships';
+import { useList } from '../hooks/useList';
 
 // estado inicial do form vazio
-export const emptyNoventa: Championship = {
+export const emptyChampionship: Championship = {
   year: '',
   champion: '',
   vice: '',
 };
 
+// inicio do estado com array vazio
 export const Noventa = () => {
-  const [noventa, setNoventa] = useState<Championship[]>([]);
-  const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Championship>(emptyNoventa);
+  const {
+    championship,
+    setDate,
+    activeRecord,
+    setActiveRecord,
+    deleteChampionship,
+  } = useList(emptyChampionship, 'noventa=true');
 
-  useEffect(() => {
-    const callFetchFunction = async () => {
-      const result = await axios.get<Championship[]>(
-        'http://localhost:4000/final?noventa=true'
-      );
-      setNoventa(result.data);
-    };
-    callFetchFunction();
-  }, [date]);
-
-  const deleteNoventa = async (noventa: Championship) => {
-    await axios.delete<Championship>(
-      `http://localhost:4000/final/${noventa.id}`
-    );
-    setDate(+new Date());
-  };
-
-  if (!noventa.length) {
+  if (!championship.length) {
     return <div>Loading... (or empty)</div>;
   }
 
   return (
     <div>
       <h1>1990 Champions</h1>
-      <button onClick={() => setActiveRecord(emptyNoventa)}>Insert New</button>
+      <button onClick={() => setActiveRecord(emptyChampionship)}>
+        Insert New
+      </button>
       <NoventaForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="table-head">
@@ -52,7 +41,7 @@ export const Noventa = () => {
           </tr>
         </thead>
         <tbody className="table-body">
-          {noventa.map((item) => {
+          {championship.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -68,7 +57,7 @@ export const Noventa = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteNoventa(item)}>X</button>
+                  <button onClick={() => deleteChampionship(item)}>X</button>
                 </td>
                 <td>{item.year}</td>
                 <td>{item.champion}</td>

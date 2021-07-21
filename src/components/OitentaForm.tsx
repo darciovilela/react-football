@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Championship } from '../interfaces/championships';
-import { emptyOitenta } from './Oitenta';
+import { emptyChampionship } from './Oitenta';
+import { useForm } from '../hooks/useForm';
 
 interface IProps {
   setDate: Function;
@@ -9,43 +8,12 @@ interface IProps {
 }
 
 export const OitentaForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const [formState, setFormState] = useState(activeRecord);
-
-  useEffect(() => {
-    setFormState(activeRecord);
-  }, [activeRecord]);
-
-  const createOitenta = async (oitenta: Championship) => {
-    await axios.post<Championship>('http://localhost:4000/final', {
-      ...oitenta,
-      oitenta: true,
-    });
-  };
-
-  const updateOitenta = async (oitenta: Championship) => {
-    await axios.patch<Championship>(
-      `http://localhost:4000/final/${oitenta.id}`,
-      oitenta
-    );
-  };
-
-  const handleChange = (event: any) => {
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    if (formState.id) {
-      await updateOitenta(formState);
-    } else {
-      await createOitenta(formState);
-    }
-    setDate(+new Date());
-    setFormState(emptyOitenta);
-  };
+  const { formState, handleChange, handleSubmit } = useForm(
+    setDate,
+    activeRecord,
+    emptyChampionship,
+    { oitenta: true }
+  );
 
   return (
     <div>

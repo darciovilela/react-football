@@ -1,45 +1,34 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { DoismilForm } from './DoismilForm';
 import { Championship } from '../interfaces/championships';
+import { useList } from '../hooks/useList';
 
 // estado inicial do form vazio
-export const emptyDoismil: Championship = {
+export const emptyChampionship: Championship = {
   year: '',
   champion: '',
   vice: '',
 };
 
+// inicio do estado com array vazio
 export const Doismil = () => {
-  const [doismil, setDoismil] = useState<Championship[]>([]);
-  const [date, setDate] = useState(+new Date());
-  const [activeRecord, setActiveRecord] = useState<Championship>(emptyDoismil);
+  const {
+    championship,
+    setDate,
+    activeRecord,
+    setActiveRecord,
+    deleteChampionship,
+  } = useList(emptyChampionship, 'doismil=true');
 
-  useEffect(() => {
-    const callFetchFunction = async () => {
-      const result = await axios.get<Championship[]>(
-        'http://localhost:4000/final?doismil=true'
-      );
-      setDoismil(result.data);
-    };
-    callFetchFunction();
-  }, [date]);
-
-  const deleteDoismil = async (doismil: Championship) => {
-    await axios.delete<Championship>(
-      `http://localhost:4000/final/${doismil.id}`
-    );
-    setDate(+new Date());
-  };
-
-  if (!doismil.length) {
+  if (!championship.length) {
     return <div>Loading... (or empty)</div>;
   }
 
   return (
     <div>
       <h1>2000 Champions</h1>
-      <button onClick={() => setActiveRecord(emptyDoismil)}>Insert New</button>
+      <button onClick={() => setActiveRecord(emptyChampionship)}>
+        Insert New
+      </button>
       <DoismilForm setDate={setDate} activeRecord={activeRecord} />
       <table className="center">
         <thead className="table-head">
@@ -52,7 +41,7 @@ export const Doismil = () => {
           </tr>
         </thead>
         <tbody className="table-body">
-          {doismil.map((item) => {
+          {championship.map((item) => {
             return (
               <tr
                 key={item.id}
@@ -68,7 +57,7 @@ export const Doismil = () => {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => deleteDoismil(item)}>X</button>
+                  <button onClick={() => deleteChampionship(item)}>X</button>
                 </td>
                 <td>{item.year}</td>
                 <td>{item.champion}</td>

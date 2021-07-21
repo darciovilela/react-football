@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Championship } from '../interfaces/championships';
-import { emptyDoismil } from './Doismil';
+import { emptyChampionship } from './Doismil';
+import { useForm } from '../hooks/useForm';
 
 interface IProps {
   setDate: Function;
@@ -9,43 +8,12 @@ interface IProps {
 }
 
 export const DoismilForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const [formState, setFormState] = useState(activeRecord);
-
-  useEffect(() => {
-    setFormState(activeRecord);
-  }, [activeRecord]);
-
-  const createDoismil = async (doismil: Championship) => {
-    await axios.post<Championship>('http://localhost:4000/final', {
-      ...doismil,
-      doismil: true,
-    });
-  };
-
-  const updateDoismil = async (doismil: Championship) => {
-    await axios.patch<Championship>(
-      `http://localhost:4000/final/${doismil.id}`,
-      doismil
-    );
-  };
-
-  const handleChange = (event: any) => {
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    if (formState.id) {
-      await updateDoismil(formState);
-    } else {
-      await createDoismil(formState);
-    }
-    setDate(+new Date());
-    setFormState(emptyDoismil);
-  };
+  const { formState, handleChange, handleSubmit } = useForm(
+    setDate,
+    activeRecord,
+    emptyChampionship,
+    { doismil: true }
+  );
 
   return (
     <div>

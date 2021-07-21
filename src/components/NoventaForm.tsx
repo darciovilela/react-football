@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Championship } from '../interfaces/championships';
-import { emptyNoventa } from './Noventa';
+import { emptyChampionship } from './Noventa';
+import { useForm } from '../hooks/useForm';
 
 interface IProps {
   setDate: Function;
@@ -9,43 +8,12 @@ interface IProps {
 }
 
 export const NoventaForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const [formState, setFormState] = useState(activeRecord);
-
-  useEffect(() => {
-    setFormState(activeRecord);
-  }, [activeRecord]);
-
-  const createNoventa = async (noventa: Championship) => {
-    await axios.post<Championship>('http://localhost:4000/final', {
-      ...noventa,
-      noventa: true,
-    });
-  };
-
-  const updateNoventa = async (noventa: Championship) => {
-    await axios.patch<Championship>(
-      `http://localhost:4000/final/${noventa.id}`,
-      noventa
-    );
-  };
-
-  const handleChange = (event: any) => {
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    if (formState.id) {
-      await updateNoventa(formState);
-    } else {
-      await createNoventa(formState);
-    }
-    setDate(+new Date());
-    setFormState(emptyNoventa);
-  };
+  const { formState, handleChange, handleSubmit } = useForm(
+    setDate,
+    activeRecord,
+    emptyChampionship,
+    { noventa: true }
+  );
 
   return (
     <div>
