@@ -1,10 +1,25 @@
 import logo from '../img/logo_futebol.png';
 
 interface IProps {
-  setpage: Function;
+  page: string;
+  setPage: Function;
 }
 
+const pages = ['Oitenta', 'Noventa', 'Doismil'];
+
 export const Header = (props: IProps) => {
+  const menuItem = (pageName: string) => {
+    return (
+      <li
+        key={pageName}
+        onClick={() => props.setPage(pageName)}
+        className={props.page === pageName ? 'active' : ''}
+      >
+        {pageName}
+      </li>
+    );
+  };
+
   return (
     <header className="App-header">
       <div>
@@ -15,11 +30,7 @@ export const Header = (props: IProps) => {
         1980-2020
       </p>
       <div>
-        <ul>
-          <li onClick={() => props.setpage('Oitenta')}>Anos Oitenta</li>
-          <li onClick={() => props.setpage('Noventa')}>Anos Noventa</li>
-          <li onClick={() => props.setpage('Doismil')}>Anos Dois mil</li>
-        </ul>
+        <ul>{pages.map((item) => menuItem(item))}</ul>
       </div>
     </header>
   );

@@ -46,6 +46,10 @@ p.header {
   color: rgb(228, 228, 67);
 }
 
+.App-header ul li.active {
+  background: green;
+}
+
 h1 {
   font-size: 25px;
   color: #4f5052;

@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header setpage={setPage} />
+      <Header page={page} setPage={setPage} />
       {switchPage()}
       <Footer />
     </div>
