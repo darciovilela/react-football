@@ -11,3 +11,13 @@ export interface Championship extends ChampionshipFlags {
   champion: string;
   vice: string;
 }
+
+// estado inicial do form vazio
+export const emptyChampionship: Championship = {
+  year: '',
+  champion: '',
+  vice: '',
+  oitenta: false,
+  noventa: false,
+  doismil: false,
+};

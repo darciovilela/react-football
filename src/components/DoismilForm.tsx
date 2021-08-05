@@ -1,5 +1,5 @@
 import { Championship } from '../interfaces/championships';
-import { emptyChampionship } from './Doismil';
+import { emptyChampionship } from '../interfaces/championships';
 import { useForm } from '../hooks/useForm';
 
 interface IProps {
