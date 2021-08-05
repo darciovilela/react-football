@@ -12,7 +12,7 @@ export const OitentaForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
     setDate,
     activeRecord,
     emptyChampionship,
-    { oitenta: true }
+    { oitenta: true, noventa: false, doismil: false }
   );
 
   return (

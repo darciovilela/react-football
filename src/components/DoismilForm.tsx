@@ -12,7 +12,7 @@ export const DoismilForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
     setDate,
     activeRecord,
     emptyChampionship,
-    { doismil: true }
+    { oitenta: false, noventa: false, doismil: true }
   );
 
   return (

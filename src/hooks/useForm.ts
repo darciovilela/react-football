@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Championship } from '../interfaces/championships';
+import { Championship, ChampionshipFlags } from '../interfaces/championships';
 
 export const useForm = (
   setDate: Function,
   activeRecord: Championship,
   emptyChampionship: Championship,
-  formParams: {}
+  formParams: ChampionshipFlags
 ) => {
   const [formState, setFormState] = useState(activeRecord);
 

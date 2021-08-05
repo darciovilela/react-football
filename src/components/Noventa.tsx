@@ -7,6 +7,9 @@ export const emptyChampionship: Championship = {
   year: '',
   champion: '',
   vice: '',
+  oitenta: false,
+  noventa: true,
+  doismil: false,
 };
 
 // inicio do estado com array vazio
