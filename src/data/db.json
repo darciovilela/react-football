@@ -5,6 +5,8 @@
       "champion": "Flamengo",
       "vice": "Atlético Mineiro",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 1
     },
     {
@@ -12,6 +14,8 @@
       "champion": "Grêmio",
       "vice": "São Paulo",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 2
     },
     {
@@ -19,6 +23,8 @@
       "champion": "Flamengo",
       "vice": "Grêmio",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 3
     },
     {
@@ -26,6 +32,8 @@
       "champion": "Flamengo",
       "vice": "Santos",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 4
     },
     {
@@ -33,6 +41,8 @@
       "champion": "Fluminense",
       "vice": "Vasco da Gama",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 5
     },
     {
@@ -40,6 +50,8 @@
       "champion": "Coritiba",
       "vice": "Bangu",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 6
     },
     {
@@ -47,6 +59,8 @@
       "champion": "São Paulo",
       "vice": "Guarani",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 7
     },
     {
@@ -54,6 +68,8 @@
       "champion": "Flamengo",
       "vice": "Internacional",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 8
     },
     {
@@ -61,6 +77,8 @@
       "champion": "Bahia",
       "vice": "Internacional",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 9
     },
     {
@@ -68,82 +86,106 @@
       "champion": "Vasco da Gama",
       "vice": "São Paulo",
       "oitenta": true,
+      "noventa": false,
+      "doismil": false,
       "id": 10
     },
     {
       "year": "1990",
       "champion": "Corinthians",
       "vice": "São Paulo",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 11
     },
     {
       "year": "1991",
       "champion": "São Paulo",
       "vice": "Bragantino",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 13
     },
     {
       "year": "1992",
       "champion": "Flamengo",
       "vice": "Botafogo",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 14
     },
     {
       "year": "1993",
       "champion": "Palmeiras",
       "vice": "Vitória",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 15
     },
     {
       "year": "1994",
       "champion": "Palmeiras",
       "vice": "Corinthians",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 16
     },
     {
       "year": "1995",
       "champion": "Botafogo",
       "vice": "Santos",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 17
     },
     {
       "year": "1996",
       "champion": "Grêmio",
       "vice": "Portuguesa",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 18
     },
     {
       "year": "1997",
       "champion": "Vasco",
       "vice": "Palmeiras",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 19
     },
     {
       "year": "1998",
       "champion": "Corinthians",
       "vice": "Cruzeiro",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 20
     },
     {
       "year": "1999",
       "champion": "Corinthians",
       "vice": "Atlético Mineiro",
+      "oitenta": false,
       "noventa": true,
+      "doismil": false,
       "id": 21
     },
     {
       "year": "2000",
       "champion": "Vasco da Gama",
       "vice": "São Caetano",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 22
     },
@@ -151,6 +193,8 @@
       "year": "2001",
       "champion": "Atletico Paranaense",
       "vice": "São Caetano",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 23
     },
@@ -158,6 +202,8 @@
       "year": "2002",
       "champion": "Santos",
       "vice": "Corinthians",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 24
     },
@@ -165,6 +211,8 @@
       "year": "2003",
       "champion": "Cruzeiro",
       "vice": "Santos",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 25
     },
@@ -172,6 +220,8 @@
       "year": "2004",
       "champion": "Santos",
       "vice": "Atletico Paranaense",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 26
     },
@@ -179,6 +229,8 @@
       "year": "2005",
       "champion": "Corinthians",
       "vice": "Internacional",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 27
     },
@@ -186,6 +238,8 @@
       "year": "2006",
       "champion": "São Paulo",
       "vice": "Internacional",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 28
     },
@@ -193,6 +247,8 @@
       "year": "2007",
       "champion": "São Paulo",
       "vice": "Santos",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 29
     },
@@ -200,6 +256,8 @@
       "year": "2008",
       "champion": "São Paulo",
       "vice": "Grêmio",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 30
     },
@@ -207,6 +265,8 @@
       "year": "2009",
       "champion": "Flamengo",
       "vice": "Internacional",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 31
     },
@@ -214,22 +274,11 @@
       "year": "2010",
       "champion": "Fluminense",
       "vice": "Cruzeiro",
+      "oitenta": false,
+      "noventa": false,
       "doismil": true,
       "id": 32
-    },
-    {
-      "year": "dsadasd",
-      "champion": "dasdasd",
-      "vice": "adasda",
-      "oitenta": true,
-      "id": 33
-    },
-    {
-      "year": "fdsfsdfdsf",
-      "champion": "sfsdfdsf",
-      "vice": "sfsdfdsfds",
-      "noventa": true,
-      "id": 34
     }
+
   ]
 }
