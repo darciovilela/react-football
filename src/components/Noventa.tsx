@@ -10,10 +10,20 @@ export const Noventa = () => {
     activeRecord,
     setActiveRecord,
     deleteChampionship,
+    loading,
+    error,
   } = useList(emptyChampionship, 'noventa=true');
 
-  if (!championship.length) {
-    return <div>Loading... (or empty)</div>;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <pre>{JSON.stringify(error, null, 2)}</pre>
+      </div>
+    );
   }
 
   return (

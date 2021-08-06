@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Championship } from '../interfaces/championships';
 
@@ -8,14 +8,24 @@ export const useList = (emptyChampionship: Championship, urlParams: string) => {
   const [date, setDate] = useState(+new Date());
   const [activeRecord, setActiveRecord] =
     useState<Championship>(emptyChampionship);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error>();
 
   // componentDidMount or variable date was changed
   useEffect(() => {
     const callFetchFunction = async () => {
-      const result = await axios.get<Championship[]>(
-        `http://localhost:4000/final?${urlParams}`
-      );
-      setChampionship(result.data);
+      try {
+        setLoading(true);
+        setError(undefined);
+        const result = await axios.get<Championship[]>(
+          `http://localhost:4000/final?${urlParams}`
+        );
+        setChampionship(result.data);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
     };
     callFetchFunction();
   }, [date, urlParams]);
@@ -33,5 +43,7 @@ export const useList = (emptyChampionship: Championship, urlParams: string) => {
     activeRecord,
     setActiveRecord,
     deleteChampionship,
+    loading,
+    error,
   };
 };

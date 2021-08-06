@@ -147,3 +147,13 @@ label {
   border-radius: 5px;
   cursor: pointer;
 }
+
+div.error {
+  text-align: left;
+  background: lightcoral;
+  color: darkred;
+  font-size: 14px;
+  padding: 14px;
+  margin: 60px;
+  border: 2px solid darkred;
+}
