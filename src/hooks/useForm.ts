@@ -9,6 +9,7 @@ export const useForm = (
   formParams: ChampionshipFlags
 ) => {
   const [formState, setFormState] = useState(activeRecord);
+  const [error, setError] = useState<Error>();
 
   useEffect(() => {
     setFormState(activeRecord);
@@ -37,14 +38,19 @@ export const useForm = (
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    if (formState.id) {
-      await updateChampionship(formState);
-    } else {
-      await createChampionship(formState);
+    try {
+      setError(undefined);
+      if (formState.id) {
+        await updateChampionship(formState);
+      } else {
+        await createChampionship(formState);
+      }
+      setDate(+new Date());
+      setFormState(emptyChampionship);
+    } catch (e) {
+      setError(e);
     }
-    setDate(+new Date());
-    setFormState(emptyChampionship);
   };
 
-  return { formState, handleChange, handleSubmit };
+  return { formState, handleChange, handleSubmit, error };
 };

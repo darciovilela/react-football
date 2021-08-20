@@ -1,3 +1,4 @@
+import { ErrorBox } from './ErrorBox';
 import { Championship } from '../interfaces/championships';
 import { emptyChampionship } from '../interfaces/championships';
 import { useForm } from '../hooks/useForm';
@@ -8,7 +9,7 @@ interface IProps {
 }
 
 export const DoismilForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
-  const { formState, handleChange, handleSubmit } = useForm(
+  const { formState, handleChange, handleSubmit, error } = useForm(
     setDate,
     activeRecord,
     emptyChampionship,
@@ -17,6 +18,7 @@ export const DoismilForm: React.FC<IProps> = ({ setDate, activeRecord }) => {
 
   return (
     <div>
+      {error && <ErrorBox error={error} />}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Year:</label>
